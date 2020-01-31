@@ -34,6 +34,16 @@ public class TableauxTest {
         int result = Tableaux.max(tab);
         assertEquals(expectedResult, result);
 
+        tab [4] = 10;
+        expectedResult = 10;
+        result = Tableaux.max(tab);
+        assertEquals(expectedResult, result);
+
+        tab[tab.length % 2] = 10;
+        expectedResult = 10;
+        result = Tableaux.max(tab);
+        assertEquals(expectedResult, result);
+
     }
 
     @org.junit.Test
@@ -46,6 +56,16 @@ public class TableauxTest {
         int expectedResult = 1;
         int result = Tableaux.min(tab);
         assertEquals(expectedResult, result);
+
+        tab [4] = -2;
+        expectedResult = -2;
+        result = Tableaux.min(tab);
+        assertEquals(expectedResult, result);
+
+        tab[tab.length % 2] = -2;
+        expectedResult = -2;
+        result = Tableaux.min(tab);
+        assertEquals(expectedResult, result);
     }
 
     @org.junit.Test
@@ -54,10 +74,14 @@ public class TableauxTest {
 
     @org.junit.Test
     public void moyenne() {
-        int[] tab = {5,4,2,3,1,6,7,9,8};
-        int expectedResult = 5;
-        int result = Tableaux.moyenne(tab);
-        assertEquals(expectedResult, result);
+        double[] tab = {5,4,2,3,1,6,7,9,8};
+        double expectedResult = 5.0;
+        double result = Tableaux.moyenne(tab);
+        assertEquals(expectedResult,result,0);
+
+        double[] tab2 ={};
+
+
     }
 
     @org.junit.Test
